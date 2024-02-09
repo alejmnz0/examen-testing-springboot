@@ -9,6 +9,8 @@ import org.springframework.boot.test.web.server.LocalServerPort;
 import org.springframework.http.client.HttpComponentsClientHttpRequestFactory;
 import org.springframework.test.context.ActiveProfiles;
 
+import java.net.http.HttpHeaders;
+
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
@@ -19,6 +21,8 @@ class IntegrationTestTemplate {
 	private int port;
 
 	@Autowired
+	HttpHeaders headers;
+	@Autowired
 	private TestRestTemplate restTemplate;
 
 
@@ -28,7 +32,7 @@ class IntegrationTestTemplate {
 	}
 
 	@Test
-	void test() {
+	void addTest() {
 		assertTrue(true);
 	}
 
